@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Lab9_V02.Domain\Lab9_V02.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

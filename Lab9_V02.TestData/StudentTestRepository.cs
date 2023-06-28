@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab9_V02.TestData
 {
-    internal class StudentTestRepository
+    public class StudentTestRepository
     {
     }
 }
