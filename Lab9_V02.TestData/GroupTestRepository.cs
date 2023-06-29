@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 
 namespace Lab9_V02.TestData
 {
-    public class StudentTestRepository : IRepository<Student>
+    public class GroupTestRepository : IRepository<Group>
     {
-         private readonly List<Student> students;
+        private readonly List<Group> groups;
 
-        public StudentTestRepository(List<Student> students)
+        public GroupTestRepository(List<Group> groups)
         {
-            this.students = students;
+            this.groups = groups;
         }
+        private void SetupData()
+        {
 
-        public void Create(Student entity)
+          }
+        public void Create(Group entity)
         {
             throw new NotImplementedException();
         }
@@ -28,23 +31,22 @@ namespace Lab9_V02.TestData
             throw new NotImplementedException();
         }
 
-        public IQueryable<Student> Find(Expression<Func<Student, bool>> predicate)
-        {
-            Func<Student, bool> filter = predicate.Compile();
-            return students.Where(filter).AsQueryable();
-        }
-
-        public Student Get(int id, params string[] includes)
+        public IQueryable<Group> Find(Expression<Func<Group, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Student> GetAll()
+        public Group Get(int id, params string[] includes)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Student entity)
+        public IQueryable<Group> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Group entity)
         {
             throw new NotImplementedException();
         }
