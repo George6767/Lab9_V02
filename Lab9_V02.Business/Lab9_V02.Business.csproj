@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lab9_V02.Domain\Lab9_V02.Domain.csproj" />
+    <ProjectReference Include="..\Lab9_V02.TestData\Lab9_V02.TestData.csproj" />
+  </ItemGroup>
+
+</Project>
