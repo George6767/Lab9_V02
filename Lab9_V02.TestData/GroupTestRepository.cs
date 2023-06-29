@@ -16,11 +16,39 @@ namespace Lab9_V02.TestData
         public GroupTestRepository(List<Group> groups)
         {
             this.groups = groups;
+            SetupData();
         }
         private void SetupData()
         {
+            var s = 1;
+            Random rnd = new Random();
+            for (var i = 1; i <= 5; i++)
+            {
+                var group = new Group
+                {
+                    BasePrice = rnd.Next(1000, 5000),
+                    Commence = DateTime.Now + TimeSpan.FromDays(rnd.Next(10, 20)),
+                    CourseName = $"Группа {i}",
+                    GroupId = i
+                };
+                var students = new List<Student>();
+                for (var j = 0; j < 10; j++)
+                {
+                    students.Add(new Student
+                    {
+                        GroupId = i,
+                        DateOfBirth = DateTime.Now - TimeSpan.FromDays(rnd.Next(6000, 20000)),
+                        FullName = $"Студент {s}",
+                        StudentId = s,
+                        IndividualPrice = (decimal)((double)group.BasePrice * rnd.NextDouble())
+                    });
+                    s++;
+                }
+                group.Students = students;
+                groups.Add(group);
+            }
 
-          }
+        }
         public void Create(Group entity)
         {
             throw new NotImplementedException();
@@ -38,7 +66,7 @@ namespace Lab9_V02.TestData
 
         public Group Get(int id, params string[] includes)
         {
-            throw new NotImplementedException();
+            return groups.FirstOrDefault(g => g.GroupId == id);
         }
 
         public IQueryable<Group> GetAll()
