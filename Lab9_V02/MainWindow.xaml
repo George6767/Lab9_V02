@@ -18,11 +18,19 @@
             <Setter Property="Background" Value="LightSteelBlue"/>
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Background" Value="Moccasin"/>
+            <Setter Property="Background" Value="LightSteelBlue"/>
         </Style>
         <Style TargetType="ListView">
             <Setter Property="Background" Value="LightSteelBlue"/>
-            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Background" Value="MediumAquamarine"/>
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background" Value="LightSteelBlue"/>
+            <Setter Property="BorderBrush" Value="MediumAquamarine"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="DarkBlue"/>
         </Style>
     </Window.Resources>
     <Grid>
