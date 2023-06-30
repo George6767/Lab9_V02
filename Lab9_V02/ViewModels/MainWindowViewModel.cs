@@ -1,5 +1,6 @@
 ﻿using Lab9_V02.Business.Infastructure;
 using Lab9_V02.Business.Managers;
+using Lab9_V02.Commands;
 using Lab9_V02.Domain.Etities;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Lab9_V02.ViewModels
 {
@@ -49,6 +51,26 @@ namespace Lab9_V02.ViewModels
             Students = new ObservableCollection<Student>();
         }
     }
+    #region Commands
+    #region Выбор группы в списке
+    private ICommand _getStudentsCommand;
+    public ICommand GetStudentsCommand =>
+    _getStudentsCommand
+    ??= new RelayCommand(OnGetStudentExecuted);
+    /// <summary>
+    /// делегат для метода Execute команды GetStudentsCommand
+    /// </summary>
+    /// <param name="id">Id группы</param>
+    private void OnGetStudentExecuted(object id)
+    {
+        Students.Clear();
+        var students = groupManager.GetStudentsOfGroup((int)id);
+        foreach (var student in students)
+            Students.Add(student);
+    }
+    #endregion
+    #endregion
 }
+
 
 
