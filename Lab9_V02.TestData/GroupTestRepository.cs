@@ -76,7 +76,7 @@ namespace Lab9_V02.TestData
 
         public void Update(Group entity)
         {
-            throw new NotImplementedException();
+             throw new NotImplementedException();
         }
     }
 }
