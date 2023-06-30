@@ -71,7 +71,17 @@ namespace Lab9_V02.TestData
 
         public IQueryable<Group> GetAll()
         {
-            throw new NotImplementedException();
+            var c = new EnumerableQuery<Group>(new List<Group>(1)
+            {
+                new Group()
+                {
+                    BasePrice = 1, Commence = DateTime.Now, CourseName = "Name", GroupId = 1, Students = new List<Student>(1)
+                    {
+                        new Student() {DateOfBirth = DateTime.Now, FullName = "F N"}
+                    }
+                }
+            });
+            return c;
         }
 
         public void Update(Group entity)
