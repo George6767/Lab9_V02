@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab9_V02"
         xmlns:vm="clr-namespace:Lab9_V02.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800">
     <Window.DataContext>
@@ -48,6 +49,16 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding CourseName}"/>
+                            <!--#region Обработка события Selection Canged -->
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding GetStudentsCommand}"
+                                                            CommandParameter="{Binding SelectedGroup.GroupId}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <!--#endregion-->
+
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

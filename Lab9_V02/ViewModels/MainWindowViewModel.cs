@@ -69,6 +69,7 @@ namespace Lab9_V02.ViewModels
             Students.Add(student);
     }
     #endregion
+
     #endregion
 }
 
